@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Hello World8</title>
+        <title> Hello World1</title>
     </head>
     <body>
         <p>
@@ -9,15 +9,18 @@
         </p>
         <?php
         if ($_SERVER["REQUEST_METHOD"]==="POST")
-                {
-        $mysqli = new mysqli("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
-        
-        if ($mysqli -> connect_errno) {
-          echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
-          exit();
+        {
+        $connection= new mysqli("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
+        if ($connection)
+        {
+            echo "mit DB verbunden";
         }
-        }
+        else {
+            die("DB-Verbindung fehlgeschlagen". mysql_connect());
+                }
+         }
         ?>
+
 
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
