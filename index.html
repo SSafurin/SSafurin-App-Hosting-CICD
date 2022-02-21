@@ -10,16 +10,12 @@
         
 
 <?php
-function OpenCon()
- {
- $dbhost = "ssamariadbserver.mariadb.database.azure.com";
- $dbuser = "siman";
- $dbpass = "Moiyan26?";
- $db = "sampledb";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". );
-  return $conn;
-  echo ($conn);
- }  
+$conn = mysqli_init();
+mysqli_real_connect($conn, 'ssamariadbserver.mariadb.database.azure.com', 'phpappuser@ssamariadbserver', 'MySQLAzure2017', 'sampledb', 3306, NULL, MYSQLI_CLIENT_SSL);
+if (mysqli_connect_errno())
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
+}
                 $sql="show databases";
                 $results=mysqli_query($conn,$sql);
                 echo ($results);
