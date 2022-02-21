@@ -1,9 +1,7 @@
-$username = "phpappuser@ssamariadbserver";
-$password = "MySQLAzure2017";
-$db_name = "sampledb";
-
-
-//Initializes MySQLi
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<body>
+<?php
 $conn = mysqli_init();
 
 mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootG2.crt.pem", NULL, NULL);
