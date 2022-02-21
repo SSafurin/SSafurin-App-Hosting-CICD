@@ -8,17 +8,17 @@
             Welcome
         </p>
         <?php
-        if ($_SERVER["REQUEST_METHOD"]==="POST"){
+        if ($_SERVER["REQUEST_METHOD"]==="POST")
+        {
         $connection=mysqli_connect("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
         if ($connection)
         {
-            echo "mit DB verbunden <br>";
+            echo "mit DB verbunden";
         }
         else {
             die("DB-Verbindung fehlgeschlagen". mysqli_connect());
-        
-        }
-    }
+                }
+         }
         ?>
 
         <form method="post" action="index.html">
