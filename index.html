@@ -1,19 +1,22 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Hello World 4</title>
+        <title> Hello World5</title>
     </head>
     <body>
         <p>
             Welcome
         </p>
         <?php
+        if ($_SERVER["REQUEST_METHOD"]==="POST")
+                {
         $mysqli = new mysqli("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
         
         // Check connection
         if ($mysqli -> connect_errno) {
           echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
           exit();
+        }
         }
         ?>
 
