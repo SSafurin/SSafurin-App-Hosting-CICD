@@ -25,8 +25,8 @@ if (mysqli_connect_errno())
 
 <?php
 
-$query = mysqli_query($dbconnect, "SELECT * FROM user_review")
-   or die (mysqli_error($dbconnect));
+$query = mysqli_query($conn, "SELECT * FROM user_review")
+   or die (mysqli_error($conn));
 
 while ($row = mysqli_fetch_array($query)) {
   echo
