@@ -7,6 +7,16 @@
         <p>
             Welcome
         </p>
+        //server adresse, username, password und db name
+        $connection=mysqli_connect("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
+        if ($connection)
+        {
+            echo "mit DB verbunden <br>";
+        }
+        else {
+            die("DB-Verbindung fehlgeschlagen". mysqli_connect());
+        
+        }
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
             <input type="submit" name="submit" value="Submit">
