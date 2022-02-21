@@ -16,9 +16,8 @@ function OpenCon()
  $dbuser = "siman";
  $dbpass = "Moiyan26?";
  $db = "sampledb";
- $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- 
- return $conn;
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". );
+  return $conn;
  }  
                 $sql="show databases";
                 $results=mysqli_query($conn,$sql);
