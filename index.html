@@ -8,7 +8,7 @@
             Welcome
         </p>
         <?php
-        $connection= mysqli_connect("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
+        $connection= mysqli_connect("ssamariadbserver.mariadb.database.azure.com","siman@ssamariadbserver","Moiyan26?","sampledb");
         if (mysqli_connect_errno()){
             echo "DB-Verbindung fehlgeschlagen". mysqli_connect_error();
                 }
@@ -16,7 +16,6 @@
                 $results=mysqli_query($connection,$sql);
                 echo $results;
         ?>
-echo $connection;
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
             <input type="submit" name="submit" value="Submit">
