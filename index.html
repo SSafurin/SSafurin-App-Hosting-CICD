@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Hello World3</title>
+        <title> Hello World4</title>
     </head>
     <body>
         <p>
@@ -12,6 +12,9 @@
         if (mysqli_connect_errno()){
             echo "DB-Verbindung fehlgeschlagen". mysqli_connect_error();
                 }
+                $sql="show databases";
+                $results=mysqli_query($connection,$sql);
+                echo $results;
         ?>
 echo $connection;
         <form method="post" action="index.html">
