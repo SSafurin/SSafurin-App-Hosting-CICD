@@ -1,20 +1,33 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Hello World4</title>
+        <title> Hello World1</title>
     </head>
     <body>
         <p>
             Welcome
         </p>
-        <?php
-        $connection= mysqli_connect("ssamariadbserver.mariadb.database.azure.com","siman@ssamariadbserver","Moiyan26?","sampledb");
-        if (mysqli_connect_errno()){
-            echo "DB-Verbindung fehlgeschlagen". mysqli_connect_error();
-                }
+        
+
+<?php
+function OpenCon()
+ {
+ $dbhost = "ssamariadbserver.mariadb.database.azure.com";
+ $dbuser = "siman";
+ $dbpass = "Moiyan26?";
+ $db = "sampledb";
+ $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+ 
+ return $conn;
+ }  
                 $sql="show databases";
-                $results=mysqli_query($connection,$sql);
+                $results=mysqli_query($conn,$sql);
                 echo $results;
+ function CloseCon($conn)
+                {
+                $conn -> close();
+                }
+
         ?>
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
