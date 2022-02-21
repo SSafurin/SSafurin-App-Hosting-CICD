@@ -1,26 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title> Hello World1</title>
-    </head>
-    <body>
-        <p>
-            Welcome
-        </p>
+<body>
 <?php
-$con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "ssamariadbserver.mariadb.database.azure.com", "phpappuser@ssamariadbserver", "MySQLAzure2017", "sampledb", 3306);
-echo ($con);   
-if ($con)
-{
-    echo "mit DB verbunden";
+$hostname = "ssamariadbserver.mariadb.database.azure.com";
+$username = "phpappuser@ssamariadbserver";
+$password = "MySQLAzure2017";
+$db = "sampledb";
+
+$dbconnect=mysqli_connect($hostname,$username,$password,$db);
+
+if ($dbconnect->connect_error) {
+  die("Database connection failed: " . $dbconnect->connect_error);
 }
-else {
-    die("DB-Verbindung fehlgeschlagen");
-        }   
+
 ?>
-        <form method="post" action="index.html">
-            Name: <input type="text" name="Firstname"><br>
-            <input type="submit" name="submit" value="Submit">
-            </form> 
-    </body>
+
+<table border="1" align="center">
+<tr>
+  <td>Reviewer Name</td>
+  <td>Stars</td>
+  <td>Details</td>
+</tr>
+
+<?php
+
+$query = mysqli_query($dbconnect, "SELECT * FROM user_review")
+   or die (mysqli_error($dbconnect));
+
+while ($row = mysqli_fetch_array($query)) {
+  echo
+   "<tr>
+    <td>{$row['reviewer_name']}</td>
+    <td>{$row['star_rating']}</td>
+    <td>{$row['details']}</td>
+   </tr>\n";
+
+}
+
+?>
+</table>
+</body>
 </html>
