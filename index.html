@@ -11,7 +11,7 @@ mysqli_real_connect($conn, 'ssamariadbserver.mariadb.database.azure.com','siman@
 
 //If connection failed, show the error
 if (mysqli_connect_errno())
-{
+{ echo "Tot";
     die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
 ?>
