@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Hello Worlddd1</title>
+        <title> Hello World1</title>
     </head>
     <body>
         <p>
@@ -9,7 +9,14 @@
         </p>
 <?php
 $con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "ssamariadbserver.mariadb.database.azure.com", "phpappuser@ssamariadbserver", "MySQLAzure2017", "sampledb", 3306);
-echo ($con);        
+echo ($con);   
+if ($con)
+{
+    echo "mit DB verbunden";
+}
+else {
+    die("DB-Verbindung fehlgeschlagen");
+        }   
 ?>
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
