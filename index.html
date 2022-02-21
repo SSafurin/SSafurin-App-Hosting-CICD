@@ -1,28 +1,19 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Hello World2</title>
+        <title> Hello World3</title>
     </head>
     <body>
         <p>
             Welcome
         </p>
         <?php
-        if ($_SERVER["REQUEST_METHOD"]==="POST")
-        {
-        $connection= new mysqli("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
-        echo $connection;
-        if ($connection)
-        {
-            echo "mit DB verbunden";
-        }
-        else {
-            die("DB-Verbindung fehlgeschlagen". mysql_connect());
+        $connection= mysqli_connect("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
+        if (mysqli_connect_errno()){
+            echo "DB-Verbindung fehlgeschlagen". mysqli_connect_error();
                 }
-         }
         ?>
-
-
+echo $connection;
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
             <input type="submit" name="submit" value="Submit">
