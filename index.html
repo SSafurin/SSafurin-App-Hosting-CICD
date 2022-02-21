@@ -22,11 +22,6 @@ function OpenCon()
                 $sql="show databases";
                 $results=mysqli_query($conn,$sql);
                 echo $results;
- function CloseCon($conn)
-                {
-                $conn -> close();
-                }
-
         ?>
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
