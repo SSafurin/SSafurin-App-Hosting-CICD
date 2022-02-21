@@ -1,28 +1,16 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title> Hello World1</title>
+        <title> Hello Worlddd1</title>
     </head>
     <body>
         <p>
             Welcome
         </p>
-        
-
 <?php
-$conn = mysqli_init();
-        if ($_SERVER["REQUEST_METHOD"]==="POST")
-        {
-        $connection= mysqli_real_connect($conn, 'ssamariadbserver.mariadb.database.azure.com', 'phpappuser@ssamariadbserver', 'MySQLAzure2017', 'sampledb', 3306, NULL, MYSQLI_CLIENT_SSL);
-        if ($connection)
-        {
-            echo "mit DB verbunden";
-        }
-        else {
-            die("DB-Verbindung fehlgeschlagen". mysql_connect());
-                }
-         }
-        ?>
+$con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "ssamariadbserver.mariadb.database.azure.com", "phpappuser@ssamariadbserver", "MySQLAzure2017", "sampledb", 3306);
+echo ($con);        
+?>
         <form method="post" action="index.html">
             Name: <input type="text" name="Firstname"><br>
             <input type="submit" name="submit" value="Submit">
