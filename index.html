@@ -1,43 +1,19 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<body>
-<?php
-$hostname = "ssamariadbserver.mariadb.database.azure.com";
+$host = "ssamariadbserver.mariadb.database.azure.com";
 $username = "phpappuser@ssamariadbserver";
 $password = "MySQLAzure2017";
-$db = "sampledb";
+$db_name = "sampledb";
 
-$dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
-if ($dbconnect -> connect_error) {
-  die("Database connection failed: " . $dbconnect -> connect_error);
+//Initializes MySQLi
+$conn = mysqli_init();
+
+mysqli_ssl_set($conn,NULL,NULL, "DigiCertGlobalRootG2.crt.pem", NULL, NULL);
+
+// Establish the connection
+mysqli_real_connect($conn, 'ssamariadbserver.mariadb.database.azure.com','phpappuser@ssamariadbserver','MySQLAzure2017','sampledb', 3306, NULL, MYSQLI_CLIENT_SSL);
+
+//If connection failed, show the error
+if (mysqli_connect_errno())
+{
+    die('Failed to connect to MySQL: '.mysqli_connect_error());
 }
-
-?>
-
-<table border="1" align="center">
-<tr>
-  <td>Reviewer Name</td>
-  <td>Stars</td>
-  <td>Details</td>
-</tr>
-
-<?php
-
-$query = mysqli_query($dbconnect, "SELECT * FROM user_review")
-   or die (mysqli_error($dbconnect));
-
-while ($row = mysqli_fetch_array($query)) {
-  echo
-   "<tr>
-    <td>{$row['reviewer_name']}</td>
-    <td>{$row['star_rating']}</td>
-    <td>{$row['details']}</td>
-   </tr>\n";
-
-}
-
-?>
-</table>
-</body>
-</html>
