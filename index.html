@@ -10,13 +10,13 @@
         <?php
         if ($_SERVER["REQUEST_METHOD"]==="POST")
         {
-        $connection=mysqli_connect("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
+        $connection=mysql_connect("ssamariadbserver.mariadb.database.azure.com","phpappuser@ssamariadbserver","MySQLAzure2017","sampledb");
         if ($connection)
         {
             echo "mit DB verbunden";
         }
         else {
-            die("DB-Verbindung fehlgeschlagen". mysqli_connect());
+            die("DB-Verbindung fehlgeschlagen". mysql_connect());
                 }
          }
         ?>
