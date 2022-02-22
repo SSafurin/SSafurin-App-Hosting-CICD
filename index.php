@@ -64,6 +64,8 @@ else
 {
 print("<h1> Einfügen eine neue Person </h1>");
 print("<p> Folgende Person wurde hinzugefügt: </p>");
+echo ($name);
+echo ($adresse);
 print("<table border='0'>
       <tr><td>Name</td><td>$name</td></tr>
       <tr><td>Name</td><td>$adresse</td></tr>
