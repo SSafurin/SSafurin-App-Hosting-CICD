@@ -57,6 +57,26 @@ echo("<br><br>");
 	 mysqli_close($mysqli);
 }
 ?>
+<table border="1" align="center">
+<tr>
+  <td>NAME</td>
+  <td>ADRESSE</td>
+</tr>
+
+<?php
+$query = mysqli_query($mysqli, "SELECT * FROM personal")
+   or die (mysqli_error($mysqli));
+
+while ($row = mysqli_fetch_array($query)) {
+  echo
+   "<tr>
+    <td>{$row['name']}</td>
+    <td>{$row['adresse']}</td>
+   </tr>\n";
+
+}
+?>
+</table>
 <?php
 $mysqli->close();
 ?>
