@@ -51,14 +51,8 @@ while ($row = mysqli_fetch_array($query)) {
    </tr>\n";
 
 }
-
-?>
 </table>
- 
 $mysqli->close();
-
-
 ?>
-
 </body>
 </html>
