@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-
 <html>
+  <head>
+Hello World
+</head>
 <body>
 
-
-<h1>Hello world </h1>
+<h1>Welcome </h1>
 
 <?php
 
@@ -17,9 +18,8 @@ $host = "ssamariadbserver.mariadb.database.azure.com";
 $user = "phpappuser@ssamariadbserver";
 $password = "MySQLAzure2017";
 $dbname = "reviews";
-$dbquery  = "select * from user_review";
-// DB connect:
 
+// DB connect:
 
 $mysqli = new mysqli($host, $user, $password, $dbname);
     if(!$mysqli)  {
@@ -30,19 +30,29 @@ $mysqli = new mysqli($host, $user, $password, $dbname);
 
 echo("<br><br>");
 
-// DB Query:
+<table border="1" align="center">
+<tr>
+  <td>Reviewer Name</td>
+  <td>Stars</td>
+  <td>Details</td>
+</tr>
 
-if ($result = $mysqli -> query($dbquery)) {
-  //echo "Returned rows are: " . $result -> num_rows . "\n";
+$query = mysqli_query($dbconnect, "SELECT * FROM user_review")
+   or die (mysqli_error($dbconnect));
 
-  while ($row = $result->fetch_assoc()) {
-    echo $row[name], ":\t\t", $row[message] . "\n";
-  }
+while ($row = mysqli_fetch_array($query)) {
+  echo
+   "<tr>
+    <td>{$row['reviewer_name']}</td>
+    <td>{$row['star_rating']}</td>
+    <td>{$row['details']}</td>
+   </tr>\n";
 
-
-  $result -> free_result();
 }
 
+?>
+</table>
+ 
 $mysqli->close();
 
 
