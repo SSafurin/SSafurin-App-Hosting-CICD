@@ -52,8 +52,7 @@ while ($row = mysqli_fetch_array($query)) {
 
 $name=$_POST['name'];
 $adresse=$_POST['adresse'];
-$userQuery="INSERT INTO personal (name, adresse)
-Values ('$name', '$adresse')";
+$userQuery="INSERT INTO personal (name, adresse) VALUES ('$name', '$adresse')";
 $result= mysqli_query($mysqli,$userQuery);
 
 if(!$result)
@@ -63,11 +62,11 @@ mysqli_error($mysqli));
 }
 else
 {
-print("<h1> Einfügen eine neue Person </h1>);
-print("<p> Folgende Person wurde hinzugefügt: </p>);
+print("<h1> Einfügen eine neue Person </h1>");
+print("<p> Folgende Person wurde hinzugefügt: </p>");
 print("<table border='0'>
       <tr><td>Name</td><td>$name</td></tr>
-      <tr><td>Name</td><td>$adresse/td></tr>
+      <tr><td>Name</td><td>$adresse</td></tr>
       </table>");
 }
 
