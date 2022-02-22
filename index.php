@@ -17,7 +17,7 @@ echo date("d.m.Y H:i:s");
 $host = "ssamariadbserver.mariadb.database.azure.com";
 $user = "siman@ssamariadbserver";
 $password = "Moiyan26?";
-$dbname = "reviews";
+$dbname = "sampledb";
 
 // DB connect:
 
@@ -33,21 +33,19 @@ echo("<br><br>");
 
 <table border="1" align="center">
 <tr>
-  <td>Reviewer Name</td>
-  <td>Stars</td>
-  <td>Details</td>
+  <td>NAME</td>
+  <td>ADRESSE</td>
 </tr>
 
 <?php
-$query = mysqli_query($mysqli, "SELECT * FROM user_review")
+$query = mysqli_query($mysqli, "SELECT * FROM personal")
    or die (mysqli_error($mysqli));
 
 while ($row = mysqli_fetch_array($query)) {
   echo
    "<tr>
-    <td>{$row['reviewer_name']}</td>
-    <td>{$row['star_rating']}</td>
-    <td>{$row['details']}</td>
+    <td>{$row['name']}</td>
+    <td>{$row['adresse']}</td>
    </tr>\n";
 
 }
