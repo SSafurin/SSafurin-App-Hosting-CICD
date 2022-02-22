@@ -29,6 +29,7 @@ $mysqli = new mysqli($host, $user, $password, $dbname);
     }
 
 echo("<br><br>");
+?>
 
 <table border="1" align="center">
 <tr>
@@ -37,6 +38,7 @@ echo("<br><br>");
   <td>Details</td>
 </tr>
 
+<?php
 $query = mysqli_query($mysqli, "SELECT * FROM user_review")
    or die (mysqli_error($dmysqli));
 
