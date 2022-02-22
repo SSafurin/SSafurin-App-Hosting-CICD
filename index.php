@@ -15,8 +15,10 @@ echo date("d.m.Y H:i:s");
 // Parameters:
 
 $host = "ssamariadbserver.mariadb.database.azure.com";
-$user = "siman@ssamariadbserver";
-$password = "Moiyan26?";
+//$user = "siman@ssamariadbserver";
+//$password = "Moiyan26?";
+$user = "phpappuser@ssamariadbserver";
+$password = "MySQLAzure2017";
 $dbname = "sampledb";
 
 // DB connect:
