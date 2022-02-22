@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Bitte Name und Adresse ausfüllen und "Submit" klicken! </h1>
+<h1>Bitte Name und Adresse eingeben und auf das "Speichern" klicken! </h1>
 
 <?php
 
@@ -30,8 +30,6 @@ $mysqli = new mysqli($host, $user, $password, $dbname);
 
 echo("<br><br>");
 ?>
-set name=NULL;
-set adresse=NULL;
  	<form method="post" action="index.php">
 		Name:<br>
 		<input type="text" name="name">
@@ -39,7 +37,7 @@ set adresse=NULL;
 		Adresse:<br>
 		<input type="text" name="adresse">
 		<br>
-		<input type="submit" name="save" value="submit">
+		<input type="submit" name="save" value="Speichern">
 	</form>
  
 <?php
@@ -50,7 +48,8 @@ set adresse=NULL;
 	 $sql = "INSERT INTO personal (name,adresse)
 	 VALUES ('$name','$adresse')";
 	 if (mysqli_query($mysqli, $sql)) {
-		echo "Neuer Eintrag $name und $adresse erfolgreich gespeichert !";
+     <br>
+		echo "Neuer Eintrag ist  $name mit der Adresse $adresse erfolgreich gespeichert !";
 	 } else {
 		echo "Error: " . $sql . "
 " . mysqli_error($mysqli);
