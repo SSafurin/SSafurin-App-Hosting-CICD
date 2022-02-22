@@ -50,10 +50,10 @@ while ($row = mysqli_fetch_array($query)) {
 
 }
 
-$name=$_POST['name'];
-$adresse=$_POST['adresse'];
-$userQuery="INSERT INTO personal (name, adresse) VALUES ('$name', '$adresse')";
-$result= mysqli_query($mysqli,$userQuery);
+$name = $_POST['name'];
+$adresse = $_POST['adresse'];
+$userQuery = "INSERT INTO personal (name, adresse) VALUES ('$name', '$adresse')";
+$result = mysqli_query($mysqli,$userQuery);
 
 if(!$result)
 {
