@@ -1,48 +1,52 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
+
 <html>
 <body>
+
+
+<h1>Hello world </h1>
+
 <?php
-$hostname = "ssamariadbserver.mariadb.database.azure.com";
-$username = "phpappuser@ssamariadbserver";
+
+echo date("d.m.Y H:i:s");
+
+
+// Parameters:
+
+$host = "ssamariadbserver.mariadb.database.azure.com";
+$user = "phpappuser@ssamariadbserver";
 $password = "MySQLAzure2017";
-$db = "reviews";
+$dbname = "reviews";
+dbquery  = "select * from user_review";
+// DB connect:
 
-$dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
-if ($dbconnect->connect_error) {
-  die("Database connection failed: " . $dbconnect->connect_error);
+$mysqli = new mysqli($host, $user, $password, $dbname);
+    if(!$mysqli)  {
+        echo "<br>database error";
+    }else{
+        echo "<br>database connection successful";
+    }
+
+echo("<br><br>");
+
+// DB Query:
+
+if ($result = $mysqli -> query($dbquery)) {
+  //echo "Returned rows are: " . $result -> num_rows . "\n";
+
+  while ($row = $result->fetch_assoc()) {
+    echo $row[name], ":\t\t", $row[message] . "\n";
+  }
+
+
+  $result -> free_result();
 }
+
+$mysqli->close();
+
 
 ?>
 
-<table border="1" align="center">
-<tr>
-  <td>Reviewer Name</td>
-  <td>Stars</td>
-  <td>Details</td>
-</tr>
-
-<?php
-
-$query = mysqli_query($dbconnect, "SELECT * FROM user_review")
-   or die (mysqli_error($dbconnect));
-
-while ($row = mysqli_fetch_array($query)) {
-  echo
-   "<tr>
-    <td>{$row['reviewer_name']}</td>
-    <td>{$row['star_rating']}</td>
-    <td>{$row['details']}</td>
-   </tr>\n";
-
-}
-
-?>
-</table>
 </body>
 </html>
-
-
-
-
-
