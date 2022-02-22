@@ -54,7 +54,7 @@ echo("<br><br>");
 		echo "Error: " . $sql . "
 " . mysqli_error($mysqli);
 	 }
-	 mysqli_close($mysqli);
+	 //mysqli_close($mysqli);
 }
 ?>
 <table border="1" align="center">
