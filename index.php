@@ -51,7 +51,9 @@ while ($row = mysqli_fetch_array($query)) {
    </tr>\n";
 
 }
+?>
 </table>
+<?php
 $mysqli->close();
 ?>
 </body>
