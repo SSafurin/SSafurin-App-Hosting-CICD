@@ -30,7 +30,8 @@ $mysqli = new mysqli($host, $user, $password, $dbname);
 
 echo("<br><br>");
 ?>
-
+name=NULL;
+adresse=NULL;
  	<form method="post" action="index.php">
 		Name:<br>
 		<input type="text" name="name">
