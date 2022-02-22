@@ -48,7 +48,6 @@ echo("<br><br>");
 	 $sql = "INSERT INTO personal (name,adresse)
 	 VALUES ('$name','$adresse')";
 	 if (mysqli_query($mysqli, $sql)) {
-     <br>
 		echo "Neuer Eintrag ist  $name mit der Adresse $adresse erfolgreich gespeichert !";
 	 } else {
 		echo "Error: " . $sql . "
