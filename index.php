@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>Welcome </h1>
+<h1>Bitte Name und Adresse ausfüllen und "Submit" klicken! </h1>
 
 <?php
 
@@ -49,7 +49,7 @@ echo("<br><br>");
 	 $sql = "INSERT INTO personal (name,adresse)
 	 VALUES ('$name','$adresse')";
 	 if (mysqli_query($mysqli, $sql)) {
-		echo "New record created successfully !";
+		echo "Neuer Eintrag $name und $adresse erfolgreich gespeichert !";
 	 } else {
 		echo "Error: " . $sql . "
 " . mysqli_error($mysqli);
