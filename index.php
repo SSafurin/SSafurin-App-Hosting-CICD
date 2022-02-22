@@ -50,6 +50,12 @@ while ($row = mysqli_fetch_array($query)) {
 
 }
 
+$name=$_POST["Name"];
+echo $name;
+<form method="post" action="index.php">
+Name: <input type="text" name="Name"><br>
+<input type="submit" name="submit" value="Submit">
+</form>
 $name = $_POST['name'];
 $adresse = $_POST['adresse'];
 $userQuery = "INSERT INTO personal (name, adresse) VALUES ('$name', '$adresse')";
