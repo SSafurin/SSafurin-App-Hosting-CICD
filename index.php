@@ -15,8 +15,8 @@ echo date("d.m.Y H:i:s");
 // Parameters:
 
 $host = "ssamariadbserver.mariadb.database.azure.com";
-$user = "phpappuser@ssamariadbserver";
-$password = "MySQLAzure2017";
+$user = "siman@ssamariadbserver";
+$password = "Moiyan26?";
 $dbname = "reviews";
 
 // DB connect:
@@ -40,7 +40,7 @@ echo("<br><br>");
 
 <?php
 $query = mysqli_query($mysqli, "SELECT * FROM user_review")
-   or die (mysqli_error($dmysqli));
+   or die (mysqli_error($mysqli));
 
 while ($row = mysqli_fetch_array($query)) {
   echo
