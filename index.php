@@ -17,7 +17,7 @@ $host = "ssamariadbserver.mariadb.database.azure.com";
 $user = "phpappuser@ssamariadbserver";
 $password = "MySQLAzure2017";
 $dbname = "reviews";
-dbquery  = "select * from user_review";
+$dbquery  = "select * from user_review";
 // DB connect:
 
 
