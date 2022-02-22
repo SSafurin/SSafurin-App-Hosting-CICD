@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-Hello World
+<head>
+<title> Hello World </title>
 </head>
 <body>
 
@@ -37,8 +37,8 @@ echo("<br><br>");
   <td>Details</td>
 </tr>
 
-$query = mysqli_query($dbconnect, "SELECT * FROM user_review")
-   or die (mysqli_error($dbconnect));
+$query = mysqli_query($mysqli, "SELECT * FROM user_review")
+   or die (mysqli_error($dmysqli));
 
 while ($row = mysqli_fetch_array($query)) {
   echo
