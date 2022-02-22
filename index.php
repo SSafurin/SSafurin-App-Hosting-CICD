@@ -5,7 +5,7 @@
 $hostname = "ssamariadbserver.mariadb.database.azure.com";
 $username = "phpappuser@ssamariadbserver";
 $password = "MySQLAzure2017";
-$db = "sampledb";
+$db = "personal";
 
 $dbconnect=mysqli_connect($hostname,$username,$password,$db);
 
@@ -24,7 +24,7 @@ if ($dbconnect->connect_error) {
 
 <?php
 
-$query = mysqli_query($dbconnect, "SELECT * FROM user_review")
+$query = mysqli_query($dbconnect, "SELECT * FROM name")
    or die (mysqli_error($dbconnect));
 
 while ($row = mysqli_fetch_array($query)) {
