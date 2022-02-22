@@ -15,8 +15,6 @@ echo date("d.m.Y H:i:s");
 // Parameters:
 
 $host = "ssamariadbserver.mariadb.database.azure.com";
-//$user = "siman@ssamariadbserver";
-//$password = "Moiyan26?";
 $user = "phpappuser@ssamariadbserver";
 $password = "MySQLAzure2017";
 $dbname = "sampledb";
@@ -51,6 +49,29 @@ while ($row = mysqli_fetch_array($query)) {
    </tr>\n";
 
 }
+
+$name=$_POST['name'];
+$adresse=$_POST['adresse'];
+$userQuery="INSERT INTO personal (name, adresse)
+Values ('$name', '$adresse')";
+$result= mysqli_query($mysqli,$userQuery);
+
+if(!$result)
+{
+die("fehlerhaft ($userQuery) from $dbname:" .
+mysqli_error($mysqli));
+}
+else
+{
+print("<h1> Einfügen eine neue Person </h1>);
+print("<p> Folgende Person wurde hinzugefügt: </p>);
+print("<table border='0'>
+      <tr><td>Name</td><td>$name</td></tr>
+      <tr><td>Name</td><td>$adresse/td></tr>
+      </table>");
+}
+
+
 ?>
 </table>
 <?php
