@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'ssafapp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_ECB482F85A454C3BA950D70B77E44788 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_013896EB31FD4F4CB464098CDF9159FA }}
           package: .
